@@ -4,12 +4,9 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.qgassessment.Account.AccountFragment;
+import com.example.qgassessment.Finance.FinanceFragment;
 import com.example.qgassessment.Utils.ViewPagerAdapter;
 import com.example.qgassessment.Weather.WeatherFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -30,7 +27,7 @@ public class MainUI extends AppCompatActivity {
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new WeatherFragment());
-        adapter.addFragment(new AccountFragment());
+        adapter.addFragment(new FinanceFragment());
         viewPager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);
