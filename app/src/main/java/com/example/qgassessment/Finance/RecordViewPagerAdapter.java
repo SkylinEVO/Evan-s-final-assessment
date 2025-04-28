@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.qgassessment.Utils.ViewPagerAdapter;
 
 import java.util.List;
 
-public class RecordViewPagerAdapter extends FragmentPagerAdapter {
+public class RecordViewPagerAdapter extends FragmentPagerAdapter {      //对应点击write按钮后跳转的添加记录的activity
     List<Fragment> fragmentList;
     String[] titles = {"支出", "收入"};
     public RecordViewPagerAdapter(@NonNull FragmentManager fm,List<Fragment> fragmentList) {

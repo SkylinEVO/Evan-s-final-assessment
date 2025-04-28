@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecordsActivity extends AppCompatActivity {
+public class FinanceRecordsActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
     @Override

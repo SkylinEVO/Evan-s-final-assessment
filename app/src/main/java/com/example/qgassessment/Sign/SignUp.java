@@ -15,9 +15,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.example.qgassessment.R;
 import com.example.qgassessment.Utils.DatabaseHelper;
@@ -47,19 +45,25 @@ public class SignUp extends AppCompatActivity {
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         Button signUp = (Button) findViewById(R.id.sign_up);
+        accountEdit = (EditText) findViewById(R.id.edit_account);
+        passwordEdit = (EditText) findViewById(R.id.edit_password);
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                accountEdit =(EditText) findViewById(R.id.edit_account);
-                passwordEdit =(EditText) findViewById(R.id.edit_password);
-                if(!accountEdit.getText().toString().isEmpty()&&!passwordEdit.getText().toString().isEmpty()) {
-                    SQLiteDatabase db = dbHelper.getWritableDatabase();
-                    ContentValues values = new ContentValues();
-                    values.put("account", accountEdit.getText().toString().trim());
-                    values.put("password", passwordEdit.getText().toString().trim());
-                    db.insert("users", null, values);
-                    Intent intent = new Intent(v.getContext(), JumpToSignIn.class);
-                    startActivity(intent);
+                String account = accountEdit.getText().toString();
+                String password = passwordEdit.getText().toString();
+                if(!account.isEmpty()&&!password.isEmpty()) {
+                    if (dbHelper.checkUser(account,password)){
+                        Toast.makeText(SignUp.this,"account is already created!"+"\n"+"please click sign in.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        SQLiteDatabase db = dbHelper.getWritableDatabase();
+                        ContentValues values = new ContentValues();
+                        values.put("account", accountEdit.getText().toString().trim());
+                        values.put("password", passwordEdit.getText().toString().trim());
+                        db.insert("users", null, values);
+                        Intent intent = new Intent(v.getContext(), JumpToSignIn.class);
+                        startActivity(intent);
+                    }
                 } else if (accountEdit.getText().toString().isEmpty()&&!passwordEdit.getText().toString().isEmpty()) {
                     Toast.makeText(SignUp.this, "account can't be empty", Toast.LENGTH_SHORT).show();
                 } else if (!accountEdit.getText().toString().isEmpty()&&passwordEdit.getText().toString().isEmpty()) {

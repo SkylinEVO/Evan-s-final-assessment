@@ -69,8 +69,12 @@ public class SignIn extends AppCompatActivity {
                         } else {
                             editor.clear();
                         }
+                        //保存当前登录账户
+                        int userId = db.getUserId(account);
+                        editor.putInt("current_user_id", userId);
                         editor.apply();
                         Intent intent = new Intent(SignIn.this, MainUI.class);
+                        intent.putExtra("id",account);
                         startActivity(intent);
                     } else {
                         Toast.makeText(SignIn.this, "account or password is invalid", Toast.LENGTH_SHORT).show();

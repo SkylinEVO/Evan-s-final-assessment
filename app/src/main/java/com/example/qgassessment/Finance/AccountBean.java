@@ -2,9 +2,9 @@ package com.example.qgassessment.Finance;
 //记录每一条数据的类
 public class AccountBean {
     int id,userId;
-    String type;    //类型
-    float money;        //金额
-    String time;        //时间
+    String type;
+    float money;
+    String time;
     int year,month,day;
 
     public AccountBean(int day, int id, int userId, float money, int month, String time, String type, int year) {

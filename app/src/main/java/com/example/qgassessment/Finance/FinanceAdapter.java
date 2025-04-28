@@ -11,7 +11,7 @@ import com.example.qgassessment.R;
 
 import java.util.List;
 
-public class FinanceAdapter extends BaseAdapter {
+public class FinanceAdapter extends BaseAdapter {       //用于向ListView插入记录
     private Context context;
     private List<AccountBean> records;
 

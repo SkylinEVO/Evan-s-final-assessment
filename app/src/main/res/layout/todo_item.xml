@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="10dp">
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_corners_finance_item"
+        android:background="@drawable/round_corners_todo_item"
         android:padding="10dp">
         <TextView
-            android:id="@+id/finance_item_type"
+            android:id="@+id/todo_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="水果"
-            android:textSize="35sp"/>
-        <TextView
-            android:id="@+id/finance_item_money"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="￥ 5.00"
-            android:layout_alignParentEnd="true"
+            android:text="今天吃M记"
             android:textSize="20sp"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/finance_item_time"
+            android:id="@+id/todo_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/finance_item_money"
+            android:text="2025年4月28日"
             android:layout_alignParentEnd="true"
-            android:text="今天18:00"
-            android:textSize="15sp"/>
+            android:textSize="20sp"/>
+
     </RelativeLayout>
+
 </RelativeLayout>
