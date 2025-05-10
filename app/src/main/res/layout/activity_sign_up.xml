@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.57"
-        android:text="Sign up"
+        android:text="注册"
         android:textAllCaps="false"/>
 
     <Button
@@ -70,6 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.64"
-        android:text="Ckick here to sign in"
+        android:text="跳转到登录页面"
         android:textAllCaps="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

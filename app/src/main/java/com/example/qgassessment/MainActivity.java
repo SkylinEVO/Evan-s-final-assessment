@@ -6,9 +6,11 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.example.qgassessment.Sign.SignIn;
 import com.example.qgassessment.Sign.SignUp;
 import com.example.qgassessment.Utils.DatabaseHelper;
 
@@ -24,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dbHelper = new DatabaseHelper(this);
         Button enterApp = (Button) findViewById(R.id.enter);
         enterApp.setOnClickListener(this);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finishAffinity();
+                System.exit(0);
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
     }
 
     @Override

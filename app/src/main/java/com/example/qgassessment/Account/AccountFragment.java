@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.qgassessment.MainUI;
 import com.example.qgassessment.R;
 import com.example.qgassessment.Sign.SignUp;
 
@@ -30,8 +31,12 @@ public class AccountFragment extends Fragment {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SignUp.class);
-                startActivity(intent);
+                boolean isLoggedIn = false;
+                Intent intent1 = new Intent(getActivity(), MainUI.class);
+                intent1.putExtra("Loggin",isLoggedIn);
+                Intent intent2 = new Intent(getActivity(), SignUp.class);
+                startActivity(intent1);
+                startActivity(intent2);
             }
         });
         return view;

@@ -13,8 +13,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.qgassessment.MainActivity;
 import com.example.qgassessment.R;
 import com.example.qgassessment.Utils.DatabaseHelper;
 import com.example.qgassessment.MainUI;
@@ -39,6 +41,14 @@ public class SignIn extends AppCompatActivity {
         rememberPassword();
         showPassword();
         db = new DatabaseHelper(this);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent = new Intent(SignIn.this, MainActivity.class);
+                startActivity(intent);
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
     }
     public void rememberPassword(){
         pref = PreferenceManager.getDefaultSharedPreferences(this);
