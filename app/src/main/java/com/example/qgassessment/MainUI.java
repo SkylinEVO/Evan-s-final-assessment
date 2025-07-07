@@ -46,5 +46,7 @@ public class MainUI extends AppCompatActivity {
         tabLayout.getTabAt(2).setText("每日事项");
         tabLayout.getTabAt(3).setText("记账本");
 
+        
+
     }
 }

@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
-        android:hint="password"/>
+        android:hint="密码"/>
 
     <ImageButton
         android:id="@+id/show_password_button"
@@ -43,13 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.38"
-        android:hint="account"/>
+        android:hint="账号"/>
 
     <CheckBox
         android:id="@+id/passRem"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="Remember password"
+        android:text="记住密码"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -67,6 +67,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.64"
-        android:text="Sign in"
+        android:text="登录"
         android:textAllCaps="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
